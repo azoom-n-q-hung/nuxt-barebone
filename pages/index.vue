@@ -9,7 +9,10 @@
         A test nuxt project with some libraries installed
       </h2>
       <div class="rsmdc-demo">
-        <button class="mdc-button -outline">This is a rsmdc button</button>
+        <button class="mdc-button -outline">
+          This is a rsmdc button
+        </button>
+        <router-link :to="'homepage'">Click here</router-link>
       </div>
     </div>
   </div>

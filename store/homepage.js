@@ -2,10 +2,10 @@ import pathify from 'vuex-pathify'
 
 export const plugins = [pathify.plugin]
 
-export const state = () => ({
+const state = () => ({
   array: [{ name: 'a', age: '16', position: 'none' }]
 })
-export const mutations = {
+const mutations = {
   add(state, { name, age, position }) {
     state.array.push({
       name,
@@ -17,3 +17,4 @@ export const mutations = {
     state.array.splice(state.array.indexOf(person), 1)
   }
 }
+export { state, mutations }
