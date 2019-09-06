@@ -20,6 +20,13 @@ const getters = {
     } catch (err) {
       return 0
     }
+  },
+  getNeedUpdatingContact: (_) => {
+    try {
+      return _.staff.summary.contactLogs.needUpdatingContact
+    } catch (err) {
+      return {}
+    }
   }
 }
 const actions = {

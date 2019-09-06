@@ -1,29 +1,21 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        minuet-barebone
-      </h1>
-      <h2 class="subtitle">
-        A test nuxt project with some libraries installed
-      </h2>
-      <div class="rsmdc-demo">
-        <button class="mdc-button -outline">
-          This is a rsmdc button
-        </button>
-        <router-link :to="'homepage'">Click here</router-link>
+  <div>
+    <content-card>
+      <div slot="header">2週間以上ステータスを変更していない案件</div>
+      <div slot="content">
+        <contact-log-notification />
       </div>
-    </div>
+    </content-card>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
+import ContentCard from '~/components/home-page/content-card'
+import ContactLogNotification from '~/components/home-page/contact-logs-notification'
 export default {
   components: {
-    Logo
+    ContentCard,
+    ContactLogNotification
   }
 }
 </script>
