@@ -1,9 +1,7 @@
 .homepage{
   >.content-card {
-    margin-top: 279px;
-    margin-left: 230px;
+    margin: auto;
     width: 1246px;
-    height: 327px;
     font-size: 13px;
   }
   >.content-card .-header{
@@ -40,7 +38,6 @@
       width: 25%;
       margin-top: 20px;
       position: relative;
-
       .item-child {
         height: 48px;
         background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -106,5 +103,19 @@
     height: 278px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     opacity: 1;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  .mdc-card__action-icons {
+    .item{
+      width: 50% !important;
+    }
+  }
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  .mdc-card__action-icons {
+    .item{
+      width: 100% !important;
+    }
   }
 }
