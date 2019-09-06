@@ -1,19 +1,38 @@
-import pathify from 'vuex-pathify'
-
-export const plugins = [pathify.plugin]
+import { make } from 'vuex-pathify'
 
 const state = () => ({
   staff: {}
 })
 const mutations = {
-  getContactLogSummary() {
-    // do some action to get data
-    const dataFromAPI = {
+  ...make.mutations(state)
+}
+const getters = {
+  ...make.getters(state),
+  getTotalItemCount: (_) => {
+    try {
+      let count = 0
+      const needUpdatingContact =
+        _.staff.summary.contactLogs.needUpdatingContact
+      for (const key in needUpdatingContact) {
+        count += needUpdatingContact[key]
+      }
+      return count
+    } catch (err) {
+      return 0
+    }
+  }
+}
+const actions = {
+  ...make.actions(state),
+  getContactLogSummary(context) {
+    // To get the summary from API /staffs/:staffsId/contact-log-summaries
+    // Some action here
+    const res = {
       summary: {
         contactLogs: {
           needUpdatingContact: {
             receptionist: 1,
-            heard: 0,
+            heard: 5,
             sendAvailableMail: 0,
             sendAvailableMailDirectMng: 0,
             sendAvailableMailLeopalace: 0,
@@ -27,21 +46,7 @@ const mutations = {
         }
       }
     }
-    state.staff = dataFromAPI
-  },
-  getTotalItemCount() {
-    let count = 0
-    for (const key in state.staff.summary.contactLogs.needUpdatingContact) {
-      count += state.staff.summary.contactLogs.needUpdatingContact[key]
-    }
-    return count
+    context.commit('SET_STAFF', res)
   }
 }
-const actions = {
-  getContactLogSummary(context) {
-    // To get the summary from API /staffs/:staffsId/contact-log-summaries
-    // Some action here
-    context.commit('getContactLogSummary')
-  }
-}
-export { state, mutations, actions }
+export { state, mutations, actions, getters }

@@ -9,7 +9,7 @@
       <!-- ... content ... -->
       <div class="mdc-card__actions content">
         <div class="mdc-card__action-buttons">
-          <span class="highlight _font26px">30</span>
+          <span class="highlight _font26px">{{ getTotalItemCount }}</span>
           <span class="highlight">件</span>の案件があります。
           <button
             class="mdc-button mdc-card__action mdc-card__action--button button"
@@ -33,7 +33,7 @@
   </div>
 </template>
 <script>
-import { get } from 'vuex-pathify'
+import { get, call } from 'vuex-pathify'
 import ContentCard from '~/components/home-page/content-card.vue'
 export default {
   components: {
@@ -43,38 +43,59 @@ export default {
     return {
       id: 0,
       array: [
-        { name: 'Hung', age: 24, position: 'fresher' },
         {
-          name: 'Thuat',
+          name: '空室有メール送信（レオパ）',
           age: 24,
-          position: 'fresher'
+          position: 'fresher',
+          des: '件'
         },
         {
-          name: 'Duy',
-          age: 26,
-          position: 'junior'
-        },
-        { name: 'Hung', age: 24, position: 'fresher' },
-        {
-          name: 'Thuat',
+          name: 'ヒアリング済',
           age: 24,
-          position: 'fresher'
+          position: 'fresher',
+          des: '件'
         },
         {
-          name: 'Duy',
+          name: '受付',
           age: 26,
-          position: 'junior'
+          position: 'junior',
+          des: '件'
         },
-        { name: 'Hung', age: 24, position: 'fresher' },
         {
-          name: 'Thuat',
+          name: '空室有メール送信（レオパ）',
           age: 24,
-          position: 'fresher'
+          position: 'fresher',
+          des: '件'
         },
         {
-          name: 'Duy',
+          name: 'ヒアリング済',
+          age: 24,
+          position: 'fresher',
+          des: '件'
+        },
+        {
+          name: '受付',
           age: 26,
-          position: 'junior'
+          position: 'junior',
+          des: '件'
+        },
+        {
+          name: '空室有メール送信（レオパ）',
+          age: 24,
+          position: 'fresher',
+          des: '件'
+        },
+        {
+          name: 'ヒアリング済',
+          age: 24,
+          position: 'fresher',
+          des: '件'
+        },
+        {
+          name: '受付',
+          age: 26,
+          position: 'junior',
+          des: '件'
         }
       ],
       person: {
@@ -89,14 +110,13 @@ export default {
     this.getDataStore()
   },
   computed: {
+    getTotalItemCount: get('staff/getTotalItemCount'),
     homepageArray: get('homepage/array'),
-    testPath: get('testPath/name')
+    testPath: get('testPath/name'),
+    getContactLogSummary: get('staff/staff')
   },
   methods: {
-    getDataStore() {
-      const data = this.$store.commit('staff/getContactLogSummary', this.$store)
-      console.log('8999999999', data)
-    },
+    getDataStore: call('staff/getContactLogSummary'),
     something() {
       console.log('xxxxxxxxxxxxx')
     },

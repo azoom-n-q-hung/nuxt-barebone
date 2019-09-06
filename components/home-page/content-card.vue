@@ -2,8 +2,11 @@
   <div>
     <div v-for="(item, index) in array" :key="index" class="item">
       <div class="item-child">
-        <span>{{ item.name }}</span>
-        <span class="_float-right">{{ item.age }}</span>
+        <div>{{ item.name }}</div>
+        <div>
+          <span class="number-highlight">{{ item.age }}</span>
+          <span>{{ item.des }}</span>
+        </div>
       </div>
       <span class="item-tool-tip">xxxxxxxxxx</span>
     </div>
