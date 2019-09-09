@@ -11,15 +11,21 @@
         全て確認
       </button>
     </div>
-    <div class="array-flex">
-      <div v-for="(item, index) in langs" :key="index" class="item">
-        <div class="item-child" @click="handleClickItem(item)">
-          <div>{{ item.label }}</div>
-          <div>
-            <span class="number-highlight">{{
-              dataNeedUpdatingContact[item.key]
-            }}</span>
-            <span>{{ text }}</span>
+    <div class="mdc-layout-grid">
+      <div class="inner">
+        <div
+          v-for="(item, index) in langs"
+          :key="index"
+          class="cell -span3desktop"
+        >
+          <div class="item-child" @click="handleClickItem(item)">
+            <div>{{ item.label }}</div>
+            <div>
+              <span class="number-highlight">{{
+                dataNeedUpdatingContact[item.key]
+              }}</span>
+              <span>{{ text }}</span>
+            </div>
           </div>
         </div>
       </div>

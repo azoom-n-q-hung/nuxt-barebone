@@ -1,6 +1,7 @@
 .new-content-card {
   margin: auto;
-  width: 1246px;
+  max-width: 1246px;
+  width: 100%;
   font-size: 13px;
 
   .-header {
@@ -11,13 +12,12 @@
     padding: 20px;
     color: #FFFFFF;
   }
-
+  
   .highlight {
     text-align: left;
     letter-spacing: 0;
     color: #EC407A;
   }
-
   .button {
     text-align: left;
     font: Bold 13px/26px Roboto;
@@ -28,5 +28,4 @@
     width: 100px;
     height: 30px;
   }
-  
 }
