@@ -86,6 +86,10 @@ export default {
       ]
     }
   },
+  computed: {
+    dataNeedUpdatingContact: get('staff/getNeedUpdatingContact'),
+    getTotalItemCount: get('staff/getTotalItemCount')
+  },
   created() {
     this.getDataStore()
   },
@@ -102,10 +106,6 @@ export default {
       )
     },
     getDataStore: call('staff/getContactLogSummary')
-  },
-  computed: {
-    dataNeedUpdatingContact: get('staff/getNeedUpdatingContact'),
-    getTotalItemCount: get('staff/getTotalItemCount')
   }
 }
 </script>

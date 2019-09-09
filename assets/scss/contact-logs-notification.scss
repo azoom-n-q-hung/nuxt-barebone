@@ -32,19 +32,3 @@
   }
 
 }
-
-@media (min-width: 481px) and (max-width: 767px) {
-  .contact-logs-notification {
-    .item{
-      width: 50% !important;
-    }
-  }
-}
-
-@media (min-width: 320px) and (max-width: 480px) {
-  .contact-logs-notification {
-    .item{
-      width: 100% !important;
-    }
-  }
-}
