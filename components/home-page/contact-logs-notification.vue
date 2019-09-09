@@ -4,8 +4,8 @@
       <span class="highlight _font26px">{{ getTotalItemCount }}</span>
       <span class="highlight">件</span>の案件があります。
       <button
-        @click="handleClick"
         class="mdc-button mdc-card__action mdc-card__action--button button"
+        @click="handleClick"
       >
         全て確認
       </button>

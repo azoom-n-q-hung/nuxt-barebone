@@ -2,7 +2,8 @@
   margin: auto;
   width: 1246px;
   font-size: 13px;
-  .-header{
+
+  .-header {
     background: #607D8B 0% 0% no-repeat padding-box;
     height: 40px;
     align-items: center;
@@ -10,12 +11,14 @@
     padding: 20px;
     color: #FFFFFF;
   }
-  .highlight{
+
+  .highlight {
     text-align: left;
     letter-spacing: 0;
     color: #EC407A;
   }
-  .button{
+
+  .button {
     text-align: left;
     font: Bold 13px/26px Roboto;
     letter-spacing: 0;
@@ -25,4 +28,5 @@
     width: 100px;
     height: 30px;
   }
+  
 }
