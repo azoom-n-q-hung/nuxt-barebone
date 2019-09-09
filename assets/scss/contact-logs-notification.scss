@@ -1,8 +1,15 @@
 .contact-logs-notification {
   color: #42A5F5;
-  
-  .draw-div {
+
+  > .draw-div {
     padding: 20px 20px 0 20px;
+  }
+
+  > .draw-div > .number_20px {
+    font-size: 20px;
+  }
+  > .draw-div > .black-text {
+    color: #000000DE
   }
 
   .array-flex {
@@ -33,47 +40,43 @@
     box-shadow: 0px 5px 9px #00000029;
   }
 
-  .array-flex > .item > .number-highlight {
+  .number-highlight {
     font-size: 24px;
   }
 
-  .array-flex > .item:hover > .item-tool-tip {
-    visibility: visible;
-  }
+  // .array-flex > .item:hover > .item-tool-tip {
+  //   visibility: visible;
+  // }
 
-  .array-flex > .item > .item-tool-tip {
-    height: 50px;
-    position: absolute;
-    visibility: hidden;
-    width: 120px;
-    z-index: 1;
-    background: #26C6DA 0% 0% no-repeat padding-box;
-    text-align: center;
-    font: Regular 14px/20px Roboto;
-    letter-spacing: 0;
-    color: #FFFFFF;
-    opacity: 1;
-    bottom: 178%;
-    left: -70px;
-  }
+  // .array-flex > .item > .item-tool-tip {
+  //   height: 50px;
+  //   position: absolute;
+  //   visibility: hidden;
+  //   width: 120px;
+  //   z-index: 1;
+  //   background: #26C6DA 0% 0% no-repeat padding-box;
+  //   text-align: center;
+  //   font: Regular 14px/20px Roboto;
+  //   letter-spacing: 0;
+  //   color: #FFFFFF;
+  //   opacity: 1;
+  //   bottom: 178%;
+  //   left: -70px;
+  // }
 
-  .array-flex > .item > .item-tool-tip:after {
-    content: "";
-    position: absolute;
-    top: 45%;
-    left: 80%;
-    margin-left: -10px;
-    border-width: 10px;
-    width: 0;
-    height: 0;
-    border-top: 80px solid #26C6DA;
-    border-left: 25px solid transparent;
-    transform: rotate(-35deg);
-  }
-
-  ._font26px {
-    font-size: 26px !important;
-  }
+  // .array-flex > .item > .item-tool-tip:after {
+  //   content: "";
+  //   position: absolute;
+  //   top: 45%;
+  //   left: 80%;
+  //   margin-left: -10px;
+  //   border-width: 10px;
+  //   width: 0;
+  //   height: 0;
+  //   border-top: 80px solid #26C6DA;
+  //   border-left: 25px solid transparent;
+  //   transform: rotate(-35deg);
+  // }
 
 }
 

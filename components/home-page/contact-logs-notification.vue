@@ -1,8 +1,9 @@
 <template>
   <div class="contact-logs-notification">
     <div class="draw-div">
-      <span class="highlight _font26px">{{ getTotalItemCount }}</span>
-      <span class="highlight">件</span>の案件があります。
+      <span class="highlight number_20px">{{ getTotalItemCount }}</span>
+      <span class="highlight">件</span>
+      <span class="black-text">の案件があります。</span>
       <button
         class="mdc-button mdc-card__action mdc-card__action--button button"
         @click="handleClick"
@@ -21,7 +22,6 @@
             <span>{{ text }}</span>
           </div>
         </div>
-        <span class="item-tool-tip">hoverした時</span>
       </div>
     </div>
   </div>
