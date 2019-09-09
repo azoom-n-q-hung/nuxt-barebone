@@ -1,6 +1,7 @@
 <template>
-  <div class="new-content-card">
+  <div class="content-card">
     <div class="-header">
+      <slot name="icon"></slot>
       <slot name="header"></slot>
     </div>
     <div class="content">

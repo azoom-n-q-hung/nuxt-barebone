@@ -1,7 +1,15 @@
 <template>
   <div>
     <content-card>
-      <div slot="header">2週間以上ステータスを変更していない案件</div>
+      <div slot="icon">
+        <img
+          class="icon"
+          src="~/assets/svg/190530_2週間以上ステータスを変更していない案件.svg"
+        />
+      </div>
+      <div slot="header">
+        2週間以上ステータスを変更していない案件
+      </div>
       <div slot="content">
         <contact-log-notification />
       </div>
