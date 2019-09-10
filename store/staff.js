@@ -1,7 +1,13 @@
 import { make } from 'vuex-pathify'
 
 const state = () => ({
-  staff: {}
+  staff: {
+    summary: {
+      contactLogs: {
+        needUpdatingContact: {}
+      }
+    }
+  }
 })
 const mutations = {
   ...make.mutations(state)
@@ -9,15 +15,11 @@ const mutations = {
 const getters = {
   ...make.getters(state),
   getTotalItemCount: (_) => {
-    try {
-      return Object.values(
-        _.staff.summary.contactLogs.needUpdatingContact
-      ).reduce((count, value) => {
-        if (Number.isFinite(value)) return (count += value)
-      })
-    } catch (err) {
-      return 0
-    }
+    return Object.values(
+      _.staff.summary.contactLogs.needUpdatingContact
+    ).reduce((count, value) => {
+      if (Number.isFinite(value)) return (count += value)
+    }, 0)
   },
   getNeedUpdatingContact: (_) => {
     try {

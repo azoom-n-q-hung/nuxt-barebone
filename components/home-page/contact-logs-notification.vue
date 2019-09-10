@@ -15,7 +15,7 @@
           :key="index"
           :item="{ key, label }"
           class="contact-logs-info-card cell -span3desktop"
-        ></contact-logs-info-card>
+        />
       </div>
     </div>
   </div>
