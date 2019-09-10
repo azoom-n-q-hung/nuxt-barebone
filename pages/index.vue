@@ -6,7 +6,7 @@
         class="icon"
         src="~/assets/svg/190530_2週間以上ステータスを変更していない案件.svg"
       />
-      <div slot="header">
+      <div slot="title">
         2週間以上ステータスを変更していない案件
       </div>
       <contact-log-notification slot="content" />

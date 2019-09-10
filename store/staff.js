@@ -10,13 +10,11 @@ const getters = {
   ...make.getters(state),
   getTotalItemCount: (_) => {
     try {
-      let count = 0
-      const needUpdatingContact =
+      return Object.values(
         _.staff.summary.contactLogs.needUpdatingContact
-      for (const key in needUpdatingContact) {
-        count += needUpdatingContact[key]
-      }
-      return count
+      ).reduce((count, value) => {
+        if (Number.isFinite(value)) return (count += value)
+      })
     } catch (err) {
       return 0
     }
@@ -40,15 +38,15 @@ const actions = {
           needUpdatingContact: {
             receptionist: 1,
             heard: 5,
-            sendAvailableMail: 0,
-            sendAvailableMailDirectMng: 0,
-            sendAvailableMailLeopalace: 0,
-            sendFollowUpMail: 0,
-            toContact: 0,
-            prospects: 0,
-            contractAdjustment: 0,
-            reversing: 0,
-            sendFollowMail: 0
+            sendAvailableMail: 1,
+            sendAvailableMailDirectMng: 1,
+            sendAvailableMailLeopalace: 2,
+            sendFollowUpMail: 3,
+            toContact: 4,
+            prospects: 5,
+            contractAdjustment: 6,
+            reversing: 7,
+            sendFollowMail: 8
           }
         }
       }

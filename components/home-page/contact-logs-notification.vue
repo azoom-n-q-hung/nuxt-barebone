@@ -1,109 +1,58 @@
 <template>
   <div class="contact-logs-notification">
-    <div class="draw-div">
-      <span class="highlight number_20px">{{ getTotalItemCount }}</span>
+    <div class="title">
+      <span class="highlight number">{{ totalItemCount }}</span>
       <span class="highlight">件</span>
-      <span class="black-text">の案件があります。</span>
-      <button
-        class="mdc-button mdc-card__action mdc-card__action--button button"
-        @click="handleClick"
-      >
+      <span class="text">の案件があります。</span>
+      <button class="mdc-button confirmbtn" @click="handleClick">
         全て確認
       </button>
     </div>
     <div class="mdc-layout-grid">
       <div class="inner">
-        <div
-          v-for="(item, index) in langs"
+        <contact-logs-info-card
+          v-for="(label, key, index) in contactStatuses"
           :key="index"
-          class="cell -span3desktop"
-        >
-          <div class="item-child" @click="handleClickItem(item)">
-            <div>{{ item.label }}</div>
-            <div>
-              <span class="number-highlight">{{
-                dataNeedUpdatingContact[item.key]
-              }}</span>
-              <span>{{ text }}</span>
-            </div>
-          </div>
-        </div>
+          :item="{ key, label }"
+          class="contact-logs-info-card cell -span3desktop"
+        ></contact-logs-info-card>
       </div>
     </div>
   </div>
 </template>
 <script>
 import { get, call } from 'vuex-pathify'
+import ContactLogsInfoCard from '~/components/home-page/contact-logs-info-card'
 export default {
+  components: {
+    ContactLogsInfoCard
+  },
   data() {
     return {
-      text: '件',
-      langs: [
-        {
-          label: '受付',
-          key: 'receptionist'
-        },
-        {
-          label: 'ヒアリング済',
-          key: 'heard'
-        },
-        {
-          label: '空室有メール送信',
-          key: 'sendAvailableMail'
-        },
-        {
-          label: '空室有メール送信（直営）',
-          key: 'sendAvailableMailDirectMng'
-        },
-        {
-          label: '空室有メール送信（レオパ）',
-          key: 'sendAvailableMailLeopalace'
-        },
-        {
-          label: '追客メール送信',
-          key: 'sendFollowUpMail'
-        },
-        {
-          label: '連絡つかず受付',
-          key: 'toContact'
-        },
-        {
-          label: '見込み',
-          key: 'prospects'
-        },
-        {
-          label: '契約調整',
-          key: 'contractAdjustment'
-        },
-        {
-          label: '逆引き中',
-          key: 'reversing'
-        },
-        {
-          label: 'フォローメール送信',
-          key: 'sendFollowMail'
-        }
-      ]
+      contactStatuses: {
+        receptionist: '受付',
+        heard: 'ヒアリング済',
+        sendAvailableMail: '空室有メール送信',
+        sendAvailableMailDirectMng: '空室有メール送信（直営）',
+        sendAvailableMailLeopalace: '空室有メール送信（レオパ）',
+        sendFollowUpMail: '追客メール送信',
+        toContact: '連絡つかず受付',
+        prospects: '見込み',
+        contractAdjustment: '契約調整',
+        reversing: '逆引き中',
+        sendFollowMail: 'フォローメール送信'
+      }
     }
   },
   computed: {
-    dataNeedUpdatingContact: get('staff/getNeedUpdatingContact'),
-    getTotalItemCount: get('staff/getTotalItemCount')
+    totalItemCount: get('staff/getTotalItemCount')
   },
   created() {
     this.getDataStore()
   },
   methods: {
     handleClick() {
-      console.log('899999999 You clicked 全て確認')
-    },
-    handleClickItem(item) {
-      console.log(
-        '922222222 You clicked',
-        item.label,
-        item.key,
-        this.dataNeedUpdatingContact[item.key]
-      )
+      console.log('899999999 You clicked 全て確認', this.totalItemCount)
     },
     getDataStore: call('staff/getContactLogSummary')
   }

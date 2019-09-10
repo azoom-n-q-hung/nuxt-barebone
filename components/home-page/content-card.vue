@@ -1,8 +1,8 @@
 <template>
   <div class="content-card">
-    <div class="-header">
+    <div class="header">
       <slot name="icon"></slot>
-      <slot name="header"></slot>
+      <slot name="title"></slot>
     </div>
     <div class="content">
       <slot name="content"></slot>
