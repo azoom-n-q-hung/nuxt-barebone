@@ -4,10 +4,6 @@
     padding: 20px 20px 0 20px;
   }
 
-  > .title > .number {
-    font-size: 20px;
-  }
-
   > .title > .text {
     color: #000000de;
   }
@@ -15,7 +11,10 @@
   > .title > .highlight {
     text-align: left;
     letter-spacing: 0;
-    color: #ec407a;
+    color: #EC407A;
+    &.-number {
+        font-size: 20px;
+    }
   }
 
   > .title > .confirmbtn {

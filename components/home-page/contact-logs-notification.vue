@@ -1,7 +1,7 @@
 <template>
   <div class="contact-logs-notification">
     <div class="title">
-      <span class="highlight number">{{ totalItemCount }}</span>
+      <span class="highlight -number">{{ totalItemCount }}</span>
       <span class="highlight">件</span>
       <span class="text">の案件があります。</span>
       <button class="mdc-button confirmbtn" @click="handleClick">
