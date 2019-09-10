@@ -15,12 +15,12 @@
 </template>
 
 <script>
-import ContentCard from '~/components/home-page/content-card'
-import ContactLogNotification from '~/components/home-page/contact-logs-notification'
+import contentCard from '~/components/home-page/content-card'
+import contactLogNotification from '~/components/home-page/contact-logs-notification'
 export default {
   components: {
-    ContentCard,
-    ContactLogNotification
+    contentCard,
+    contactLogNotification
   }
 }
 </script>

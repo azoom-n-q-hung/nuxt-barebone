@@ -22,10 +22,10 @@
 </template>
 <script>
 import { get, call } from 'vuex-pathify'
-import ContactLogsInfoCard from '~/components/home-page/contact-logs-info-card'
+import contactLogsInfoCard from '~/components/home-page/contact-logs-info-card'
 export default {
   components: {
-    ContactLogsInfoCard
+    contactLogsInfoCard
   },
   data() {
     return {
