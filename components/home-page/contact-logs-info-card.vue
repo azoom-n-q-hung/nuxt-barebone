@@ -2,7 +2,7 @@
   <div class="contact-logs-info-card" @click="handleClickItem(item)">
     <div>{{ item.label }}</div>
     <div class="amount">
-      <span class="-number">{{ needUpdatingContact[item.key] }}</span>
+      <span class="number">{{ needUpdatingContact[item.key] }}</span>
       件
     </div>
   </div>
