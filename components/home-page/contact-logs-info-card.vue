@@ -1,8 +1,8 @@
 <template>
   <div class="contact-logs-info-card" @click="handleClickItem(item)">
     <div>{{ item.label }}</div>
-    <div>
-      <span class="-number">{{ dataNeedUpdatingContact[item.key] }}</span>
+    <div class="amount">
+      <span class="-number">{{ needUpdatingContact[item.key] }}</span>
       件
     </div>
   </div>
@@ -12,9 +12,12 @@ import { get } from 'vuex-pathify'
 export default {
   props: {
     item: {
-      default: () => {},
-      type: Object
+      type: Object,
+      default: () => {}
     }
+  },
+  computed: {
+    needUpdatingContact: get('staff/getNeedUpdatingContact')
   },
   methods: {
     handleClickItem(item) {
@@ -22,12 +25,9 @@ export default {
         '922222222 You clicked',
         item.label,
         item.key,
-        this.dataNeedUpdatingContact[item.key]
+        this.needUpdatingContact[item.key]
       )
     }
-  },
-  computed: {
-    dataNeedUpdatingContact: get('staff/getNeedUpdatingContact')
   }
 }
 </script>

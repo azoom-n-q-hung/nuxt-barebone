@@ -1,6 +1,5 @@
 .contact-logs-notification {
-  color: #42A5F5;
-
+  color: #42a5f5;
   > .title {
     padding: 20px 20px 0 20px;
   }
@@ -8,42 +7,25 @@
   > .title > .number {
     font-size: 20px;
   }
+
   > .title > .text {
-    color: #000000DE
+    color: #000000de;
   }
 
   > .title > .highlight {
     text-align: left;
     letter-spacing: 0;
-    color: #EC407A;
+    color: #ec407a;
   }
 
   > .title > .confirmbtn {
     text-align: left;
     font: Bold 13px/26px Roboto;
     letter-spacing: 0;
-    color: #42A5F5;
+    color: #42a5f5;
     opacity: 1;
     box-shadow: 0px 1px 3px #00000029;
     width: 100px;
     height: 30px;
   }
-
-  > .mdc-layout-grid > .inner > .contact-logs-info-card {
-    height: 48px;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    box-shadow: 0px 1px 3px #00000029;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 16px;
-  }
-
-  > .mdc-layout-grid > .inner > .contact-logs-info-card {
-    &:hover{
-      background: #F5F5F5 0% 0% no-repeat padding-box;
-      box-shadow: 0px 5px 9px #00000029;
-    }
-  }
-
 }

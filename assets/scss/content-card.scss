@@ -3,14 +3,13 @@
   max-width: 1246px;
   width: 100%;
   font-size: 14px;
-
   > .header {
-    background: #607D8B 0% 0% no-repeat padding-box;
+    background: #607d8b 0% 0% no-repeat padding-box;
     height: 40px;
     align-items: center;
     display: flex;
-    padding:  10px 20px;
-    color: #FFFFFF;
+    padding: 10px 20px;
+    color: #ffffff;
   }
 
   > .header > .icon {
@@ -18,5 +17,4 @@
     color: transparent;
     margin-right: 8px;
   }
-
 }
