@@ -47,7 +47,7 @@ export default {
   computed: {
     totalItemCount: get('staff/getTotalItemCount')
   },
-  created() {
+  mounted() {
     this.getDataStore()
   },
   methods: {
